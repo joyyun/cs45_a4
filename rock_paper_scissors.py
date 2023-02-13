@@ -6,30 +6,34 @@ import random
 def play_rps():
     # 0 = rock, 1 = paper, 2 = scissors
     selections = ["rock", "paper", "scissors"]
-    print("3! 2! 1! Go!")
-    user_selection = input("Please enter your selection:")
-    # user = list.index(user_selection)
-    comp = random.choice([0,1,2])
-    comp_selection = selections[comp]
+    cont = True
+    while cont:
+        cont = False
+        print("3! 2! 1! Go!")
+        user_selection = input("Please enter your selection:")
+        # user = list.index(user_selection)
+        comp = random.choice([0,1,2])
+        comp_selection = selections[comp]
 
-    # decide winner
-    if user_selection == comp_selection:
-        print("It's a tie!")
-    elif user_selection == "rock":
-        if comp_selection == "paper":
-            print("I chose paper -- you lose!")
-        else:
-            print("I chose scissors -- you win!")
-    elif user_selection == "paper":
-        if comp_selection == "scissors":
-            print("I chose scissors -- you lose!")
-        else:
-            print("I chose rock -- you win!")
-    elif user_selection == "scissors":
-        if comp_selection == "rock":
-            print("I chose rock -- you lose!")
-        else:
-            print("I chose paper -- you win!")
+        # decide winner
+        if user_selection == comp_selection:
+            print("It's a tie -- play again!")
+            cont = True
+        elif user_selection == "rock":
+            if comp_selection == "paper":
+                print("I chose paper -- you lose!")
+            else:
+                print("I chose scissors -- you win!")
+        elif user_selection == "paper":
+            if comp_selection == "scissors":
+                print("I chose scissors -- you lose!")
+            else:
+                print("I chose rock -- you win!")
+        elif user_selection == "scissors":
+            if comp_selection == "rock":
+                print("I chose rock -- you lose!")
+            else:
+                print("I chose paper -- you win!")
 
     
     return
