@@ -47,6 +47,7 @@ def main():
     print()
     print("Time to play! On the count of 3, enter your selection.")
     play_rps()
+    print()
     print("That was fun, thanks for playing :)")
 
 if __name__ == '__main__':
